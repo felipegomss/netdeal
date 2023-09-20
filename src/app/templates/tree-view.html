@@ -1,0 +1,23 @@
+<ul>
+  <li ng-repeat="item in items track by $index">
+    <input
+      type="checkbox"
+      ng-model="item.checked"
+      ng-change="toggleCheck(item)"
+    />
+    <span class="item-name" ng-click="toggleChildrenVisibility(item)">
+      {{ item.name }}
+      <i class="fa fa-arrow-down" ng-if="item.collapsed"></i>
+      <i class="fa fa-arrow-up" ng-if="!item.collapsed"></i>
+    </span>
+    <button ng-click="addChild(item)"><i class="fa fa-plus"></i></button>
+    <button ng-click="deleteItem(item)"><i class="fa fa-trash"></i></button>
+    <button ng-click="updateItem(item)">
+      <i class="fa fa-edit"></i>
+    </button>
+    <tree-view
+      ng-if="!item.collapsed && item.children.length > 0"
+      items="item.children"
+    ></tree-view>
+  </li>
+</ul>

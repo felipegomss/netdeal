@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CRUD de Árvore de Itens</title>
+    <link rel="stylesheet" href="app/styles/main.css" />
+    <link rel="stylesheet" href="app/styles/tree.css" />
+    <script
+      src="https://kit.fontawesome.com/86530e25de.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body ng-controller="TreeController">
+    <div class="container">
+      <button ng-click="addRootItem()">Adicionar root</button>
+      <div id="tree">
+        <tree-view items="items"></tree-view>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app/app.js"></script>
+  </body>
+</html>
